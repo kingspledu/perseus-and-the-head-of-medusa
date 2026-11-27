@@ -1,8 +1,8 @@
 'use strict';
 const PREFIX='story-reader-perseus-and-the-head-of-medusa-';
-const CACHE=PREFIX+'3f289cda9aed';
+const CACHE=PREFIX+'cover-3d20155e716b';
 const ROOT=new URL('./',self.location).href;
-const CORE=['./','./style.css?v=3f289cda9aed','./app.js?v=3f289cda9aed','./pwa.js?v=3f289cda9aed','./manifest.webmanifest','./assets/app-icon-192.png','./assets/app-icon-512.png'];
+const CORE=['./','./style.css?v=3f289cda9aed','./app.js?v=3f289cda9aed','./pwa.js?v=3f289cda9aed','./manifest.webmanifest','./assets/app-icon-192.png','./assets/app-icon-512.png','./assets/perseus-cover.webp'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',event=>{
